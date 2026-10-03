@@ -1,3 +1,6 @@
+
+<img width="1618" height="713" alt="Screenshot From 2026-10-03 16-05-02" src="https://github.com/user-attachments/assets/f82a25b2-8d19-41f7-8153-2af9ce444fc8" />
+
 # Smart File Organizer v1
 
 A Python-based file organization tool that scans a selected folder, identifies files by their extensions, creates category folders, and moves supported files into the appropriate folders.
