@@ -6,11 +6,11 @@ skip =0
 fail =0
 unknown =0
 
-def move_file(Folder,m,s,f) :
+def move_file(file,Folder,m,s,f) :
     if not os.path.isdir(Folder) :
         os.mkdir(Folder)
     try:
-        shutil.move(file,Folder)
+        shutil.move(file,os.path.join(destination,Folder))
         print("File Successfully moved.")
         m+=1
     except FileExistsError :
@@ -46,17 +46,17 @@ for root,dirs,files in os.walk(source) :
             if os.path.basename(destination) == dir :
                 dirs.remove(dir)
         if extension == ".pdf":
-            move,skip,fail = move_file("PDF",move,skip,fail)
+            move,skip,fail = move_file(file,"PDF",move,skip,fail)
         elif extension == ".txt"or extension == ".doc":
-            move,skip,fail = move_file("Documents",move,skip,fail)
+            move,skip,fail = move_file(file,"Documents",move,skip,fail)
         elif extension == ".xls"or extension == ".xlsx":
-            move,skip,fail = move_file("Excel",move,skip,fail)
+            move,skip,fail = move_file(file,"Excel",move,skip,fail)
         elif extension == ".png" or extension == ".jpeg" or extension == ".jpg" :
-            move,skip,fail = move_file("Images",move,skip,fail)
+            move,skip,fail = move_file(file,"Images",move,skip,fail)
         elif extension ==".mp4" or extension ==".webm":
-            move,skip,fail = move_file("Videos",move,skip,fail)
+            move,skip,fail = move_file(file,"Videos",move,skip,fail)
         elif extension == ".py" :
-            move,skip,fail=move_file("Python",move,skip,fail)
+            move,skip,fail=move_file(file,"Python",move,skip,fail)
         else :
             unknown+=1
 
