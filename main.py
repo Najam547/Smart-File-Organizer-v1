@@ -52,7 +52,8 @@ rules = {
         ".mp4"  : "Videos" ,
         ".webm" : "Videos" ,
         ".py"   : "Python" ,
-        ".pptx" : "Ppt"
+        ".pptx" : "Ppt" ,
+        ".java" : "Java"
             }
 
 for root,dirs,files in os.walk(source) :
